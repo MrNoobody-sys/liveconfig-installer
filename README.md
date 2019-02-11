@@ -2,6 +2,6 @@
 
 ## Install
 1. git clone https://github.com/Nazaled/liveconfig-installer.git
-2. sudo chmod 755 liveconfig-installer.sh
-3. sudo ./liveconfig-installer.sh
+2. cd liveconfig-installer
+4. sudo bash ./liveconfig-installer.sh
 
