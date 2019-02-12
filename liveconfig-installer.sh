@@ -36,11 +36,7 @@ if [ "$response" == "j" ]; then
                 sudo wget http://repo.liveconfig.com/debian/liveconfig.list
                 sudo apt install aptitude -y && sudo aptitude update -y && sudo aptitude install liveconfig-meta -y && sudo aptitude install liveconfig -y
 # Fehlende Pakete installieren die für ein Webserver notwendig sind
-                sudo apt install php-fpm -y
-                sudo apt-get install spamassassin -y
-                aptitude install php-pear -y
-                sudo apt install apache2-suexec-custom -y
-		sudo apt-get install postgrey -y
+		sudo apt-get install php-fpm spamassassin php-pear apache2-suexec-custom postgrey dbconfig-common dbconfig-mysql javascript-common libjs-jquery -y
                 sudo systemctl restart apache2
                 clear
 
