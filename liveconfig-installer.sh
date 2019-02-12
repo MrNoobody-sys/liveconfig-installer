@@ -40,6 +40,7 @@ if [ "$response" == "j" ]; then
                 sudo apt-get install spamassassin -y
                 aptitude install php-pear -y
                 sudo apt install apache2-suexec-custom -y
+		sudo apt-get install postgrey -y
                 sudo systemctl restart apache2
                 clear
 
