@@ -44,7 +44,10 @@ if [ "$response" == "j" ]; then
 		sudo a2enconf php7.2-fpm
 		sudo systemctl restart apache2
 		clear
-
+	echo "Installationsordner wird geloescht"
+		sudo rm -rf /liveconfig-installer
+		sleep 2
+		clear
         echo "Installation ist abgeschlossen Server wird jetzt neugestartet...."
 	sleep 2
 	sudo reboot now
