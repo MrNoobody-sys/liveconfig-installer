@@ -43,8 +43,6 @@ if [ "$response" == "j" ]; then
                 sudo a2enmod proxy_fcgi
 		sudo a2enconf php7.2-fpm
 		sudo systemctl restart apache2
-		sudo printf "# Kopieren Sie den Key in die SSL-Datei. Kopieren Sie danach den Inhalt des SSL-Zertifikats (CRT)\n # in diese Datei - der CSR (Zertifikatsanforderung) wird nicht benötigt!.">/etc/liveconfig/sslcert.pem
-		sudo nano /etc/liveconfig/sslcert.pem
 		clear
 
         echo "Installation ist abgeschlossen Server wird jetzt neugestartet...."
