@@ -35,14 +35,17 @@ if [ "$response" == "j" ]; then
                 cd /etc/apt/sources.list.d
                 sudo wget http://repo.liveconfig.com/debian/liveconfig.list
                 sudo apt install aptitude -y && sudo aptitude update -y && sudo aptitude install liveconfig-meta -y && sudo aptitude install liveconfig -y
+		clear
 # Fehlende Pakete installieren die für ein Webserver notwendig sind
+	echo "Fehlende Pakete werden installiert"
+                sleep 2
 		sudo apt-get install php-mbstring php-fpm spamassassin php-pear apache2-suexec-custom postgrey dbconfig-common dbconfig-mysql javascript-common libjs-jquery -y
                 sudo a2enmod proxy_fcgi
 		sudo a2enconf php7.2-fpm
 		sudo systemctl restart apache2
-                clear
 		sudo printf "# Kopieren Sie den Key in die SSL-Datei. Kopieren Sie danach den Inhalt des SSL-Zertifikats (CRT)\n # in diese Datei - der CSR (Zertifikatsanforderung) wird nicht benötigt!.">/etc/liveconfig/sslcert.pem
-		
+		sudo nano /etc/liveconfig/sslcert.pem
+		clear
 
         echo "Installation ist abgeschlossen Server wird jetzt neugestartet...."
 	sleep 2
