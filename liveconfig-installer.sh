@@ -45,10 +45,18 @@ if [ "$response" == "j" ]; then
 		sudo systemctl restart apache2
 		clear
 	echo "Installationsordner wird geloescht"
-		sudo rm -rf /liveconfig-installer
 		sleep 2
+		sudo rm -rf /liveconfig-installer
 		clear
+# Let's Encrypt Certbot wird installiert
+	echo "Ein SSL Zertifikat für die Domain $subdomain.$domain wird installiert und eingerichtet"
+		sleep 2
+		sudo add-apt-repository ppa:certbot/certbot
+		sudo apt -y install python-certbot-apache
+		sudo certbot --apache -d $subdomain.$domain
+		clear
+	
         echo "Installation ist abgeschlossen Server wird jetzt neugestartet...."
-	sleep 2
-	sudo reboot now
+		sleep 2
+		sudo reboot now
 fi
